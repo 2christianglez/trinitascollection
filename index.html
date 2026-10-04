@@ -2,23 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Mobile Viewport Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <!-- Prevents iOS Safari from auto-styling & recoloring phone numbers -->
     <meta name="format-detection" content="telephone=no">
-    
-    <!-- ==================== PAGE TITLE & SEO ==================== -->
+
+    <!-- ==================== PRIMARY SEO ==================== -->
     <title>Trinitas Aeterna Trading LLC | Curated Horology</title>
+    <meta name="description" content="Curated Horology & Fine Timepieces by Christian Alexander. Explore fine luxury timepieces.">
+    <link rel="canonical" href="https://TrinitasCollection.com">
+
+    <!-- ==================== OPEN GRAPH & SOCIAL METADATA ==================== -->
+    <meta property="og:site_name" content="Trinitas Aeterna Trading LLC">
     <meta property="og:title" content="Trinitas Aeterna Trading LLC | Curated Horology">
     <meta property="og:description" content="Curated Horology & Fine Timepieces by Christian Alexander.">
     <meta property="og:url" content="https://TrinitasCollection.com">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://TrinitasCollection.com/logo2_2.jpg">
+    <meta property="og:image:alt" content="Trinitas Aeterna Trading LLC Emblem">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trinitas Aeterna Trading LLC | Curated Horology">
+    <meta name="twitter:description" content="Curated Horology & Fine Timepieces by Christian Alexander.">
+    <meta name="twitter:image" content="https://TrinitasCollection.com/logo2_2.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
         /* ==================== GLOBAL STYLES ==================== */
         *, *::before, *::after {
@@ -26,7 +37,7 @@
         }
 
         html {
-            -webkit-text-size-adjust: 100%; /* Prevents text inflation on orientation change on iOS */
+            -webkit-text-size-adjust: 100%;
             text-size-adjust: 100%;
         }
 
@@ -35,12 +46,11 @@
             padding: 0;
             width: 100%;
             min-height: 100vh;
-            min-height: 100dvh; /* Dynamic Viewport Height for mobile browser address bar adjustment */
+            min-height: 100dvh;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            /* Dark emerald gradient website background */
             background: #050d0a;
             background: radial-gradient(circle at center, #112a22 0%, #050d0a 100%);
             background-attachment: fixed;
@@ -55,7 +65,7 @@
             padding: 30px 15px;
         }
 
-        /* Atmospheric Vignette Overlay */
+        /* Vignette Overlay */
         body::before {
             content: '';
             position: fixed;
@@ -65,7 +75,7 @@
             z-index: 1;
         }
 
-        /* Luxury Gold Border Frame */
+        /* Gold Border Frame */
         body::after {
             content: '';
             position: fixed;
@@ -89,10 +99,9 @@
             text-align: center;
             will-change: transform, opacity;
             animation: masterEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            transform: translateZ(0); /* Hardware acceleration trigger */
+            transform: translateZ(0);
         }
 
-        /* Logo Container */
         .logo-wrapper {
             display: flex;
             justify-content: center;
@@ -117,21 +126,16 @@
             }
         }
 
-        /* Contact Info Overlay */
         .content-overlay {
-            background: transparent;
-            padding: 0;
-            border: none;
-            box-shadow: none;
             width: 100%;
             max-width: 500px;
         }
 
-        /* ==================== TYPOGRAPHY ==================== */
+        /* ==================== TYPOGRAPHY & HEADINGS ==================== */
         .subtitle {
             font-family: 'Montserrat', Arial, sans-serif;
             color: #e2e2e2;
-            font-size: clamp(0.68rem, 2vw, 0.75rem);
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin: 0 0 18px 0;
@@ -144,7 +148,7 @@
             margin-top: 10px;
         }
 
-        /* Centered Champagne Gold Divider Line */
+        /* Divider Line */
         .curator-info::before {
             content: '';
             position: absolute;
@@ -158,7 +162,7 @@
 
         .name {
             font-family: 'Cinzel', serif;
-            font-size: clamp(0.85rem, 3vw, 1rem);
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
             letter-spacing: 4px;
             color: #ffffff;
             margin: 0 0 6px 0;
@@ -167,19 +171,19 @@
         }
 
         .title-role {
-            font-size: clamp(0.6rem, 1.8vw, 0.68rem);
+            font-size: clamp(0.65rem, 1.8vw, 0.72rem);
             letter-spacing: 3.5px;
-            color: #e3c87a;
+            color: #e8d08c; /* Slightly higher contrast gold */
             text-transform: uppercase;
             margin: 0 0 16px 0;
             font-weight: 400;
         }
 
         .contact-details {
-            font-size: clamp(0.72rem, 2.2vw, 0.8rem);
+            font-size: clamp(0.75rem, 2.2vw, 0.85rem);
             letter-spacing: 2px;
             color: #dcdcdc;
-            margin: 4px 0;
+            margin: 6px 0;
             font-weight: 300;
         }
 
@@ -187,20 +191,32 @@
             color: #dcdcdc;
             text-decoration: none;
             display: inline-block;
-            padding: 6px 10px; /* Expands touch target on mobile */
-            transition: color 0.3s ease, letter-spacing 0.3s ease;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: color 0.3s ease, letter-spacing 0.3s ease, outline 0.2s ease;
         }
 
-        .contact-details a:hover,
-        .contact-details a:focus {
+        .contact-details a:hover {
             color: #f3df9b;
             letter-spacing: 2.8px;
         }
 
-        /* Mobile & Tablet Adjustments */
+        /* Focus state for keyboard accessibility */
+        .contact-details a:focus-visible {
+            outline: 1px solid #e3c87a;
+            outline-offset: 2px;
+            color: #f3df9b;
+        }
+
+        .icon {
+            margin-right: 6px;
+            aria-hidden: true;
+        }
+
+        /* Responsive Tweaks */
         @media (max-width: 768px) {
             body::after {
-                inset: 12px; /* Narrower border on mobile screens */
+                inset: 12px;
             }
             .master-logo {
                 max-width: 270px;
@@ -210,7 +226,6 @@
             }
         }
 
-        /* Small Screen Height Adjustments (Mobile Landscape) */
         @media (max-height: 600px) {
             body {
                 align-items: flex-start;
@@ -218,7 +233,7 @@
                 padding-bottom: 40px;
             }
             body::after {
-                display: none; /* Hide frame border on landscape mobile to prevent cutting through content */
+                display: none;
             }
         }
 
@@ -238,27 +253,40 @@
 
     <div class="page-container">
         
-        <!-- ==================== LOGO FRONT & CENTER ==================== -->
+        <!-- Logo -->
         <div class="logo-wrapper">
-            <img src="logo2_2.jpg" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
+            <img src="logo2_2.jpg" 
+                 alt="Trinitas Aeterna Trading LLC Emblem" 
+                 class="master-logo" 
+                 width="340" 
+                 height="340"
+                 fetchpriority="high">
         </div>
 
-        <!-- ==================== SEAMLESS CONTACT INFO ==================== -->
+        <!-- Main Content -->
         <main class="content-overlay">
             
-            <p class="subtitle">Curated Horology & Fine Timepieces</p>
+            <h1 class="subtitle">Curated Horology &amp; Fine Timepieces</h1>
             
             <address class="curator-info" style="font-style: normal;">
                 
-                <p class="name">CHRISTIAN ALEXANDER</p>
+                <h2 class="name">CHRISTIAN ALEXANDER</h2>
+                <p class="title-role">Founder &amp; Curator</p>
                 
-                <p class="title-role">Founder & Curator</p>
+                <p class="contact-details">
+                    <span class="icon" aria-hidden="true">✉</span>
+                    <a href="mailto:Christian@TrinitasCollection.com" aria-label="Email Christian Alexander">Christian@TrinitasCollection.com</a>
+                </p>
                 
-                <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
+                <p class="contact-details">
+                    <span class="icon" aria-hidden="true">☎</span>
+                    <a href="tel:+13106003351" aria-label="Call Christian Alexander at 310-600-3351">310.600.3351</a>
+                </p>
                 
-                <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
-                
-                <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank" rel="noopener noreferrer">TrinitasCollection.com</a></p>
+                <p class="contact-details">
+                    <span class="icon" aria-hidden="true">🌐</span>
+                    <a href="https://TrinitasCollection.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Trinitas Collection website">TrinitasCollection.com</a>
+                </p>
                 
             </address>
         </main>
