@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trinitas Collection | Curated Horology</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #0b0b0b;
-      color: #f4f4f4;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-    img.logo {
-      max-width: 280px;
-      height: auto;
-      margin-bottom: 24px;
-    }
-    h1 {
-      letter-spacing: 4px;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      font-weight: 300;
-      color: #d4af37;
-    }
-    p {
-      color: #888;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinitas Collection | Curated Horology</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0b0b0b url('Web.Site.2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f4f4f4;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            box-sizing: border-box;
+            padding-bottom: 60px;
+        }
+
+        .content-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px 40px;
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+        }
+
+        h1 {
+            letter-spacing: 4px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: #d4af37;
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-  <img src="Web.Site.2.jpg" alt="Trinitas Collection Logo" class="logo">
-  <h1>Trinitas Collection</h1>
-  <p>Curated Horology & Fine Timepieces</p>
+    <div class="content-overlay">
+        <h1>Trinitas Collection</h1>
+        <p>Curated Horology & Fine Timepieces</p>
+    </div>
 </body>
 </html>
