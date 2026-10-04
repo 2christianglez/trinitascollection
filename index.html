@@ -40,12 +40,12 @@
             position: relative;
         }
 
-        /* Haute Horlogerie Atmospheric Vignette Layer */
+        /* Subtle Luxury Vignette */
         body::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(3,5,4,0.15) 0%, rgba(2,3,2,0.88) 100%);
+            background: radial-gradient(circle at center, rgba(3,5,4,0.1) 0%, rgba(2,3,2,0.7) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -55,7 +55,7 @@
             content: '';
             position: absolute;
             inset: 24px;
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(217, 184, 106, 0.2);
             pointer-events: none;
             z-index: 3;
         }
@@ -86,7 +86,7 @@
             width: 100%;
             max-width: 420px;
             height: auto;
-            filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
+            filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75));
             border-radius: 4px;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -95,7 +95,7 @@
             transform: scale(1.02);
         }
 
-        /* Side Contact Information Card Column */
+        /* Side Contact Information Card Column (Matched to Lighter Rich Emerald & Champagne Gold) */
         .card-wrapper {
             display: flex;
             justify-content: center;
@@ -104,15 +104,15 @@
         }
 
         .content-overlay {
-            background: linear-gradient(145deg, rgba(10, 15, 12, 0.88) 0%, rgba(2, 4, 3, 0.95) 100%);
+            background: linear-gradient(145deg, rgba(31, 90, 74, 0.78) 0%, rgba(20, 58, 48, 0.88) 100%);
             padding: 45px 50px;
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-top: 1px solid rgba(229, 197, 101, 0.55);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-            border-left: 1px solid rgba(212, 175, 55, 0.12);
-            border-right: 1px solid rgba(212, 175, 55, 0.12);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.92), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-top: 1px solid rgba(227, 200, 122, 0.5);
+            border-bottom: 1px solid rgba(217, 184, 106, 0.3);
+            border-left: 1px solid rgba(217, 184, 106, 0.2);
+            border-right: 1px solid rgba(217, 184, 106, 0.2);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             animation: masterEntrance 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             width: 380px;
             box-sizing: border-box;
@@ -121,17 +121,17 @@
 
         .content-overlay:hover {
             transform: translateY(-4px);
-            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.98), 0 0 45px rgba(212, 175, 55, 0.08);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.75), 0 0 35px rgba(217, 184, 106, 0.12);
         }
 
         .subtitle {
             font-family: 'Montserrat', Arial, sans-serif;
-            color: #cfcfcf;
+            color: #e2e2e2;
             font-size: 0.68rem;
             letter-spacing: 3.5px;
             text-transform: uppercase;
             margin: 0 0 24px 0;
-            font-weight: 200;
+            font-weight: 300;
         }
 
         .curator-info {
@@ -140,7 +140,7 @@
             margin-top: 20px;
         }
 
-        /* Precision Hairline Divider */
+        /* Precision Champagne Gold Divider */
         .curator-info::before {
             content: '';
             position: absolute;
@@ -148,7 +148,7 @@
             left: 0;
             width: 50px;
             height: 1px;
-            background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);
+            background: linear-gradient(90deg, rgba(227, 200, 122, 0.8), transparent);
         }
 
         .name {
@@ -157,34 +157,35 @@
             letter-spacing: 3.5px;
             color: #ffffff;
             margin: 0 0 5px 0;
-            font-weight: 400;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .title-role {
             font-size: 0.63rem;
             letter-spacing: 3px;
-            color: #d4af37;
+            color: #e3c87a;
             text-transform: uppercase;
             margin: 0 0 22px 0;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .contact-details {
             font-size: 0.72rem;
             letter-spacing: 2.2px;
-            color: #b0b0b0;
+            color: #dcdcdc;
             margin: 12px 0;
-            font-weight: 200;
+            font-weight: 300;
         }
 
         .contact-details a {
-            color: #b0b0b0;
+            color: #dcdcdc;
             text-decoration: none;
             transition: color 0.4s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .contact-details a:hover {
-            color: #e5c565;
+            color: #f3df9b;
             letter-spacing: 2.8px;
         }
 
