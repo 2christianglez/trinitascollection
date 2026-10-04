@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Trinitas Aeterna Trading LLC | Curated Horology</title>
     
-    <!-- Open Graph Social Sharing Meta Tags -->
+    <!-- ==================== PAGE TITLE & SEO ==================== -->
+    <title>Trinitas Aeterna Trading LLC | Curated Horology</title>
     <meta property="og:title" content="Trinitas Aeterna Trading LLC | Curated Horology">
     <meta property="og:description" content="Curated Horology & Fine Timepieces by Christian Alexander.">
     <meta property="og:url" content="https://TrinitasCollection.com">
     <meta property="og:type" content="website">
 
-    <!-- High-Performance Font Preconnecting -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     
     <style>
+        /* ==================== GLOBAL STYLES ==================== */
         html, body {
             height: 100%;
             margin: 0;
@@ -26,6 +27,7 @@
         }
 
         body {
+            /* EDIT BACKGROUND IMAGE HERE if needed */
             background: #020302 url('Web.Site.2.jpg') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
@@ -40,7 +42,7 @@
             position: relative;
         }
 
-        /* Subtle Luxury Vignette */
+        /* Atmospheric Vignette Overlay */
         body::before {
             content: '';
             position: absolute;
@@ -50,7 +52,7 @@
             z-index: 1;
         }
 
-        /* Luxury Viewport Architectural Frame */
+        /* Luxury Gold Border Frame */
         body::after {
             content: '';
             position: absolute;
@@ -60,7 +62,7 @@
             z-index: 3;
         }
 
-        /* Main Layout Container (Split Side-by-Side) */
+        /* ==================== LAYOUT CONTAINER ==================== */
         .page-container {
             position: relative;
             z-index: 2;
@@ -73,7 +75,7 @@
             gap: 50px;
         }
 
-        /* Centered Logo Graphic Column */
+        /* Left Side: Logo Column */
         .logo-wrapper {
             display: flex;
             justify-content: center;
@@ -97,7 +99,7 @@
             transform: scale(1.02);
         }
 
-        /* Side Contact Information Card Column */
+        /* Right Side: Contact Card Column */
         .card-wrapper {
             display: flex;
             justify-content: center;
@@ -107,6 +109,7 @@
         }
 
         .content-overlay {
+            /* Rich Emerald Green Luxury Card Background */
             background: linear-gradient(145deg, rgba(31, 90, 74, 0.78) 0%, rgba(20, 58, 48, 0.88) 100%);
             padding: 45px 50px;
             backdrop-filter: blur(25px);
@@ -127,6 +130,7 @@
             box-shadow: 0 50px 100px rgba(0, 0, 0, 0.75), 0 0 35px rgba(217, 184, 106, 0.12);
         }
 
+        /* ==================== CARD TYPOGRAPHY ==================== */
         .subtitle {
             font-family: 'Montserrat', Arial, sans-serif;
             color: #e2e2e2;
@@ -143,7 +147,7 @@
             margin-top: 20px;
         }
 
-        /* Precision Champagne Gold Divider */
+        /* Champagne Gold Divider Line */
         .curator-info::before {
             content: '';
             position: absolute;
@@ -192,7 +196,7 @@
             letter-spacing: 2.8px;
         }
 
-        /* Responsive stack for mobile screens */
+        /* Mobile Responsiveness */
         @media (max-width: 900px) {
             html, body {
                 overflow: auto;
@@ -224,26 +228,44 @@
     </style>
 </head>
 <body>
+
     <div class="page-container">
-        <!-- Centered Official Logo Graphic -->
+        
+        <!-- ==================== EDIT LOGO IMAGE HERE ==================== -->
         <div class="logo-wrapper">
-            <img src="Designer3.png" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
+            <!-- logo.PNG matches your current repository file -->
+            <img src="logo.PNG" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
         </div>
 
-        <!-- Side Information Card -->
+        <!-- ==================== EDIT CONTACT CARD DETAILS HERE ==================== -->
         <div class="card-wrapper">
             <main class="content-overlay">
+                
+                <!-- Card Subtitle -->
                 <p class="subtitle">Curated Horology & Fine Timepieces</p>
                 
                 <address class="curator-info" style="font-style: normal;">
+                    
+                    <!-- Your Name -->
                     <p class="name">CHRISTIAN ALEXANDER</p>
+                    
+                    <!-- Your Title -->
                     <p class="title-role">Founder & Curator</p>
+                    
+                    <!-- Email Address -->
                     <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
+                    
+                    <!-- Phone Number -->
                     <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
+                    
+                    <!-- Website Link -->
                     <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
+                    
                 </address>
             </main>
         </div>
+
     </div>
+
 </body>
 </html>
