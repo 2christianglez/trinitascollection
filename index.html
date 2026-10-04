@@ -2,155 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trinitas Collection | Curated Horology &amp; Fine Timepieces</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trinitas Aeterna Trading LLC | Curated Horology &amp; Fine Timepieces</title>
+  <meta name="description" content="Trinitas Aeterna Trading LLC offers curated horology and fine timepieces. Direct digital storefront launching soon.">
+  <meta name="theme-color" content="#071a14">
+
+  <!-- Social sharing preview -->
+  <meta property="og:title" content="Trinitas Aeterna Trading LLC">
+  <meta property="og:description" content="Curated Horology &amp; Fine Timepieces. Launching soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Browser tab icon -->
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #071a14;
+      --bg-card: rgba(10, 36, 28, 0.85);
+      --gold: #c9a24b;
+      --gold-soft: #a88a45;
+      --text: #f2ede0;
+      --line: rgba(201, 162, 75, 0.35);
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background-color: #081c15;
-      background-image: radial-gradient(circle at center, #0f2e23 0%, #05130e 100%);
-      color: #f5f5f5;
-      font-family: 'Cinzel', 'Times New Roman', Georgia, serif;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px;
+      justify-content: center;
+      padding: 24px 16px;
+      background:
+        radial-gradient(ellipse at top, #0f3326 0%, var(--bg) 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      line-height: 1.5;
     }
+
     .card {
-      background: rgba(8, 28, 21, 0.6);
-      border: 1px solid rgba(197, 160, 89, 0.25);
-      border-radius: 4px;
-      padding: 40px 24px;
-      max-width: 520px;
       width: 100%;
+      max-width: 560px;
+      padding: 48px 32px 32px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
+
     .logo {
-      max-width: 240px;
-      width: 100%;
-      height: auto;
-      margin-bottom: 24px;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 4px;
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      margin: 0 auto 28px;
     }
+
+    /* Shown only if the logo image fails to load */
+    .logo-fallback {
+      display: none;
+      margin-bottom: 28px;
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
     .badge {
       display: inline-block;
-      letter-spacing: 0.18em;
+      padding: 8px 20px;
+      margin-bottom: 24px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      font-size: 0.75rem;
-      color: #c5a059;
-      border: 1px solid rgba(197, 160, 89, 0.4);
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-bottom: 20px;
+      color: var(--gold);
     }
-    .tagline {
+
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      font-size: 0.95rem;
-      color: #e0e0e0;
-      margin-bottom: 24px;
-      font-weight: 400;
     }
+
     .divider {
+      width: 64px;
+      height: 1px;
+      margin: 28px auto;
+      background: var(--gold-soft);
       border: 0;
-      border-top: 1px solid rgba(197, 160, 89, 0.3);
-      width: 60px;
-      margin: 0 auto 28px auto;
     }
-    .founder-name {
-      letter-spacing: 0.15em;
-      font-size: 1.1rem;
-      color: #ffffff;
-      margin-bottom: 4px;
+
+    h2 {
+      font-size: 1.35rem;
       font-weight: 600;
-    }
-    .founder-title {
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      color: #c5a059;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 24px;
     }
-    .contact-item {
-      margin-bottom: 8px;
+
+    .title {
+      margin-top: 4px;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
     }
-    .contact-item a {
-      color: #d1d5db;
+
+    .contact { margin-top: 28px; font-size: 1.1rem; }
+    .contact p { margin-bottom: 10px; }
+
+    a {
+      color: inherit;
       text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      transition: color 0.2s ease;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
     }
-    .contact-item a:hover {
-      color: #c5a059;
+    a:hover, a:focus-visible { color: var(--gold); border-bottom-color: var(--gold); }
+    a.site { color: var(--gold); letter-spacing: 0.06em; }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--line);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--gold-soft);
     }
-    .domain-link {
-      margin-top: 16px;
-      margin-bottom: 24px;
-    }
-    .domain-link a {
-      color: #c5a059;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-    }
-    .footer-note {
-      font-size: 0.72rem;
-      color: #c5a059;
-      letter-spacing: 0.06em;
-      margin-top: 16px;
-      border-top: 1px dashed rgba(197, 160, 89, 0.25);
-      padding-top: 16px;
-      opacity: 0.9;
+
+    @media (max-width: 480px) {
+      .card { padding: 36px 20px 24px; }
+      h1, h2 { font-size: 1.1rem; }
+      .badge { font-size: 0.7rem; letter-spacing: 0.15em; }
     }
   </style>
 </head>
 <body>
+  <main class="card">
+    <!-- File name must match exactly (GitHub is case-sensitive): logo.png -->
+    <img
+      class="logo"
+      src="logo.png"
+      alt="Trinitas Aeterna Trading LLC logo"
+      width="260"
+      onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+    <div id="logo-fallback" class="logo-fallback">Trinitas Aeterna Trading LLC</div>
 
-  <div class="card">
-    <!-- Emblem / Logo -->
-    <!-- REPLACE 'PASTE_YOUR_BASE64_STRING_HERE' WITH YOUR STRING FROM BASE64-IMAGE.DE -->
-    <img src="PASTE_YOUR_BASE64_STRING_HERE" alt="Trinitas Aeterna Trading LLC" class="logo">
+    <div class="badge">Direct Digital Storefront &mdash; Launching Soon</div>
 
-    <!-- Coming Soon Status Badge -->
-    <div>
-      <span class="badge">Direct Digital Storefront — Launching Soon</span>
-    </div>
-
-    <!-- Main Tagline -->
-    <h1 class="tagline">Curated Horology &amp; Fine Timepieces</h1>
+    <h1>Curated Horology &amp; Fine Timepieces</h1>
 
     <hr class="divider">
 
-    <!-- Founder Information -->
-    <h2 class="founder-name">CHRISTIAN ALEXANDER</h2>
-    <p class="founder-title">Founder &amp; Curator</p>
+    <h2>Christian Alexander</h2>
+    <p class="title">Founder &amp; Curator</p>
 
-    <!-- Contact Information -->
-    <div class="contact-item">
-      <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a>
-    </div>
-    <div class="contact-item">
-      <a href="tel:3106003351">310.600.3351</a>
-    </div>
-    <div class="domain-link">
-      <a href="https://TrinitasCollection.com">TrinitasCollection.com</a>
+    <div class="contact">
+      <p><a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
+      <p><a href="tel:+13106003351">310.600.3351</a></p>
+      <p><a class="site" href="https://TrinitasCollection.com">TrinitasCollection.com</a></p>
     </div>
 
-    <!-- Legal Entity & Channel Footprint (Gold Accent) -->
-    <div class="footer-note">
-      &copy; 2026 Trinitas Aeterna Trading LLC &bull; Direct Online Platform &amp; Marketplace Integration
-    </div>
-  </div>
+    <footer>
+      &copy; <span id="year">2026</span> Trinitas Aeterna Trading LLC &bull; Direct Online Platform &amp; Marketplace Integration
+    </footer>
+  </main>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
