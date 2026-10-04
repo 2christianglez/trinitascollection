@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mobile Viewport Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- Prevents iOS Safari from auto-styling & recoloring phone numbers -->
+    <meta name="format-detection" content="telephone=no">
     
     <!-- ==================== PAGE TITLE & SEO ==================== -->
     <title>Trinitas Aeterna Trading LLC | Curated Horology</title>
@@ -18,34 +21,46 @@
     
     <style>
         /* ==================== GLOBAL STYLES ==================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%; /* Prevents text inflation on orientation change on iOS */
+            text-size-adjust: 100%;
+        }
+
         html, body {
-            height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh; /* Dynamic Viewport Height for mobile browser address bar adjustment */
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            /* Rich, sophisticated luxury dark emerald gradient background */
+            /* Dark emerald gradient website background */
+            background: #050d0a;
             background: radial-gradient(circle at center, #112a22 0%, #050d0a 100%);
+            background-attachment: fixed;
             color: #f4f4f4;
             font-family: 'Montserrat', Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             position: relative;
+            padding: 30px 15px;
         }
 
         /* Atmospheric Vignette Overlay */
         body::before {
             content: '';
-            position: absolute;
+            position: fixed;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(3,5,4,0) 0%, rgba(2,3,2,0.6) 100%);
+            background: radial-gradient(circle at center, rgba(3,5,4,0) 0%, rgba(2,3,2,0.65) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -53,9 +68,9 @@
         /* Luxury Gold Border Frame */
         body::after {
             content: '';
-            position: absolute;
-            inset: 24px;
-            border: 1px solid rgba(217, 184, 106, 0.2);
+            position: fixed;
+            inset: 20px;
+            border: 1px solid rgba(217, 184, 106, 0.25);
             pointer-events: none;
             z-index: 3;
         }
@@ -65,164 +80,152 @@
             position: relative;
             z-index: 2;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            width: 90%;
-            box-sizing: border-box;
-            gap: 60px;
+            justify-content: center;
+            max-width: 800px;
+            width: 100%;
+            gap: 28px;
+            text-align: center;
+            will-change: transform, opacity;
+            animation: masterEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateZ(0); /* Hardware acceleration trigger */
         }
 
-        /* Left Side: Logo Column */
+        /* Logo Container */
         .logo-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex: 1;
-            min-width: 0;
-            /* Moved drop-shadow here so clip-path on image doesn't slice the shadow */
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
-            animation: masterEntrance 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            width: 100%;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
         }
 
         .master-logo {
             width: 100%;
-            max-width: 380px;
+            max-width: 340px;
             height: auto;
             display: block;
-            border-radius: 4px;
-            /* Crops out bottom-right watermark star */
-            clip-path: inset(0 3.5% 3.5% 0);
+            border-radius: 6px;
+            clip-path: inset(0 0 4% 0);
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .master-logo:hover {
-            transform: scale(1.02);
+        @media (hover: hover) and (pointer: fine) {
+            .master-logo:hover {
+                transform: scale(1.02);
+            }
         }
 
-        /* Right Side: Contact Card Column */
-        .card-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            min-width: 0;
-        }
-
+        /* Contact Info Overlay */
         .content-overlay {
-            /* Rich Emerald Green Luxury Card Background */
-            background: linear-gradient(145deg, rgba(26, 77, 63, 0.85) 0%, rgba(15, 46, 38, 0.95) 100%);
-            padding: 45px 50px;
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-top: 1px solid rgba(227, 200, 122, 0.5);
-            border-bottom: 1px solid rgba(217, 184, 106, 0.3);
-            border-left: 1px solid rgba(217, 184, 106, 0.2);
-            border-right: 1px solid rgba(217, 184, 106, 0.2);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            animation: masterEntrance 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            width: 380px;
-            box-sizing: border-box;
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.7s ease;
+            background: transparent;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .content-overlay:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.75), 0 0 35px rgba(217, 184, 106, 0.12);
-        }
-
-        /* ==================== CARD TYPOGRAPHY ==================== */
+        /* ==================== TYPOGRAPHY ==================== */
         .subtitle {
             font-family: 'Montserrat', Arial, sans-serif;
             color: #e2e2e2;
-            font-size: 0.68rem;
-            letter-spacing: 3.5px;
+            font-size: clamp(0.68rem, 2vw, 0.75rem);
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin: 0 0 24px 0;
+            margin: 0 0 18px 0;
             font-weight: 300;
         }
 
         .curator-info {
             position: relative;
             padding-top: 20px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
-        /* Champagne Gold Divider Line */
+        /* Centered Champagne Gold Divider Line */
         .curator-info::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
             height: 1px;
-            background: linear-gradient(90deg, rgba(227, 200, 122, 0.8), transparent);
+            background: linear-gradient(90deg, transparent, rgba(227, 200, 122, 0.8), transparent);
         }
 
         .name {
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 3.5px;
+            font-size: clamp(0.85rem, 3vw, 1rem);
+            letter-spacing: 4px;
             color: #ffffff;
-            margin: 0 0 5px 0;
+            margin: 0 0 6px 0;
             font-weight: 500;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
         .title-role {
-            font-size: 0.63rem;
-            letter-spacing: 3px;
+            font-size: clamp(0.6rem, 1.8vw, 0.68rem);
+            letter-spacing: 3.5px;
             color: #e3c87a;
             text-transform: uppercase;
-            margin: 0 0 22px 0;
+            margin: 0 0 16px 0;
             font-weight: 400;
         }
 
         .contact-details {
-            font-size: 0.72rem;
-            letter-spacing: 2.2px;
+            font-size: clamp(0.72rem, 2.2vw, 0.8rem);
+            letter-spacing: 2px;
             color: #dcdcdc;
-            margin: 12px 0;
+            margin: 4px 0;
             font-weight: 300;
         }
 
         .contact-details a {
             color: #dcdcdc;
             text-decoration: none;
-            transition: color 0.4s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-block;
+            padding: 6px 10px; /* Expands touch target on mobile */
+            transition: color 0.3s ease, letter-spacing 0.3s ease;
         }
 
-        .contact-details a:hover {
+        .contact-details a:hover,
+        .contact-details a:focus {
             color: #f3df9b;
             letter-spacing: 2.8px;
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 900px) {
-            html, body {
-                overflow: auto;
-            }
-            body {
-                padding: 40px 0;
-                align-items: flex-start;
-            }
+        /* Mobile & Tablet Adjustments */
+        @media (max-width: 768px) {
             body::after {
-                display: none; /* Hide frame border on mobile to prevent clipping scrolling content */
+                inset: 12px; /* Narrower border on mobile screens */
+            }
+            .master-logo {
+                max-width: 270px;
             }
             .page-container {
-                flex-direction: column;
-                gap: 30px;
+                gap: 20px;
             }
-            .content-overlay {
-                width: 90%;
-                max-width: 400px;
+        }
+
+        /* Small Screen Height Adjustments (Mobile Landscape) */
+        @media (max-height: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            body::after {
+                display: none; /* Hide frame border on landscape mobile to prevent cutting through content */
             }
         }
 
         @keyframes masterEntrance {
             from {
                 opacity: 0;
-                transform: translateY(35px) scale(0.98);
+                transform: translateY(20px) scale(0.98);
             }
             to {
                 opacity: 1;
@@ -235,32 +238,30 @@
 
     <div class="page-container">
         
-        <!-- ==================== LOGO CONTAINER ==================== -->
+        <!-- ==================== LOGO FRONT & CENTER ==================== -->
         <div class="logo-wrapper">
-            <img src="logo.PNG" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
+            <img src="logo2_2.jpg" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
         </div>
 
-        <!-- ==================== CONTACT CARD ==================== -->
-        <div class="card-wrapper">
-            <main class="content-overlay">
+        <!-- ==================== SEAMLESS CONTACT INFO ==================== -->
+        <main class="content-overlay">
+            
+            <p class="subtitle">Curated Horology & Fine Timepieces</p>
+            
+            <address class="curator-info" style="font-style: normal;">
                 
-                <p class="subtitle">Curated Horology & Fine Timepieces</p>
+                <p class="name">CHRISTIAN ALEXANDER</p>
                 
-                <address class="curator-info" style="font-style: normal;">
-                    
-                    <p class="name">CHRISTIAN ALEXANDER</p>
-                    
-                    <p class="title-role">Founder & Curator</p>
-                    
-                    <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
-                    
-                    <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
-                    
-                    <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
-                    
-                </address>
-            </main>
-        </div>
+                <p class="title-role">Founder & Curator</p>
+                
+                <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
+                
+                <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
+                
+                <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank" rel="noopener noreferrer">TrinitasCollection.com</a></p>
+                
+            </address>
+        </main>
 
     </div>
 
