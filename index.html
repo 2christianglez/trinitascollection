@@ -60,32 +60,31 @@
             z-index: 3;
         }
 
-        /* Main Layout Container (Side-by-Side: Centered Logo + Side Info Card) */
+        /* Main Layout Container (Split Side-by-Side) */
         .page-container {
             position: relative;
             z-index: 2;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 60px;
-            max-width: 1100px;
+            justify-content: space-between;
+            max-width: 1200px;
             width: 90%;
             box-sizing: border-box;
+            gap: 50px;
         }
 
-        /* Centered Logo Graphic Styling */
+        /* Centered Logo Graphic Column */
         .logo-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             flex: 1;
-            max-width: 420px;
             animation: masterEntrance 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .master-logo {
             width: 100%;
-            max-width: 380px;
+            max-width: 420px;
             height: auto;
             filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
             border-radius: 4px;
@@ -96,7 +95,14 @@
             transform: scale(1.02);
         }
 
-        /* Side Contact Information Card */
+        /* Side Contact Information Card Column */
+        .card-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
         .content-overlay {
             background: linear-gradient(145deg, rgba(10, 15, 12, 0.88) 0%, rgba(2, 4, 3, 0.95) 100%);
             padding: 45px 50px;
@@ -215,23 +221,25 @@
 </head>
 <body>
     <div class="page-container">
-        <!-- Centered Official Logo Graphic (`Designer3.png`) -->
+        <!-- Centered Official Logo Graphic -->
         <div class="logo-wrapper">
             <img src="Designer3.png" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
         </div>
 
         <!-- Side Information Card -->
-        <main class="content-overlay">
-            <p class="subtitle">Curated Horology & Fine Timepieces</p>
-            
-            <address class="curator-info" style="font-style: normal;">
-                <p class="name">CHRISTIAN ALEXANDER</p>
-                <p class="title-role">Founder & Curator</p>
-                <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
-                <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
-                <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
-            </address>
-        </main>
+        <div class="card-wrapper">
+            <main class="content-overlay">
+                <p class="subtitle">Curated Horology & Fine Timepieces</p>
+                
+                <address class="curator-info" style="font-style: normal;">
+                    <p class="name">CHRISTIAN ALEXANDER</p>
+                    <p class="title-role">Founder & Curator</p>
+                    <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
+                    <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
+                    <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
+                </address>
+            </main>
+        </div>
     </div>
 </body>
 </html>
