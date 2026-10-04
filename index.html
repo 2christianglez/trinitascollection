@@ -32,11 +32,9 @@
             color: #f4f4f4;
             font-family: 'Montserrat', Arial, sans-serif;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             box-sizing: border-box;
-            padding-bottom: 50px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             position: relative;
@@ -62,11 +60,46 @@
             z-index: 3;
         }
 
-        .content-overlay {
+        /* Main Layout Container (Side-by-Side: Centered Logo + Side Info Card) */
+        .page-container {
             position: relative;
             z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1100px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        /* Centered Logo Graphic Styling */
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            max-width: 420px;
+            animation: masterEntrance 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .master-logo {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
+            border-radius: 4px;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .master-logo:hover {
+            transform: scale(1.02);
+        }
+
+        /* Side Contact Information Card */
+        .content-overlay {
             background: linear-gradient(145deg, rgba(10, 15, 12, 0.88) 0%, rgba(2, 4, 3, 0.95) 100%);
-            padding: 42px 55px;
+            padding: 45px 50px;
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border-top: 1px solid rgba(229, 197, 101, 0.55);
@@ -75,8 +108,7 @@
             border-right: 1px solid rgba(212, 175, 55, 0.12);
             box-shadow: 0 50px 100px rgba(0, 0, 0, 0.92), inset 0 1px 0 rgba(255, 255, 255, 0.06);
             animation: masterEntrance 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            max-width: 90%;
-            width: 460px;
+            width: 380px;
             box-sizing: border-box;
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.7s ease;
         }
@@ -86,70 +118,20 @@
             box-shadow: 0 60px 120px rgba(0, 0, 0, 0.98), 0 0 45px rgba(212, 175, 55, 0.08);
         }
 
-        /* Official Crest & Branding Header */
-        .brand-header {
-            text-align: center;
-            margin-bottom: 22px;
-        }
-
-        .brand-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.45rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-weight: 500;
-            background: linear-gradient(180deg, #fff6cc 0%, #e5c565 52%, #8c7120 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0 0 4px 0;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7));
-        }
-
-        .brand-sub {
-            font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 400;
-            background: linear-gradient(180deg, #fff6cc 0%, #e5c565 52%, #8c7120 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0 0 18px 0;
-        }
-
-        /* Celtic Knot Emblem Styling */
-        .emblem-container {
-            margin: 14px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .emblem-image {
-            width: 75px;
-            height: auto;
-            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.8));
-            transition: transform 0.5s ease;
-        }
-
-        .emblem-image:hover {
-            transform: scale(1.05);
-        }
-
         .subtitle {
             font-family: 'Montserrat', Arial, sans-serif;
             color: #cfcfcf;
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             letter-spacing: 3.5px;
             text-transform: uppercase;
-            margin: 18px 0 24px 0;
+            margin: 0 0 24px 0;
             font-weight: 200;
         }
 
         .curator-info {
             position: relative;
-            padding-top: 18px;
-            margin-top: 18px;
+            padding-top: 20px;
+            margin-top: 20px;
         }
 
         /* Precision Hairline Divider */
@@ -157,16 +139,15 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 50px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7), transparent);
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);
         }
 
         .name {
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 3.5px;
             color: #ffffff;
             margin: 0 0 5px 0;
@@ -178,15 +159,15 @@
             letter-spacing: 3px;
             color: #d4af37;
             text-transform: uppercase;
-            margin: 0 0 16px 0;
+            margin: 0 0 22px 0;
             font-weight: 300;
         }
 
         .contact-details {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             letter-spacing: 2.2px;
             color: #b0b0b0;
-            margin: 8px 0;
+            margin: 12px 0;
             font-weight: 200;
         }
 
@@ -199,6 +180,25 @@
         .contact-details a:hover {
             color: #e5c565;
             letter-spacing: 2.8px;
+        }
+
+        /* Responsive stack for mobile screens */
+        @media (max-width: 900px) {
+            html, body {
+                overflow: auto;
+            }
+            body {
+                padding: 40px 0;
+                align-items: flex-start;
+            }
+            .page-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .content-overlay {
+                width: 90%;
+                max-width: 400px;
+            }
         }
 
         @keyframes masterEntrance {
@@ -214,27 +214,24 @@
     </style>
 </head>
 <body>
-    <main class="content-overlay">
-        <!-- Official Crest Layout using Designer3 -->
-        <div class="brand-header">
-            <h1 class="brand-title">Trinitas Aeterna</h1>
-            
-            <div class="emblem-container">
-                <img src="Designer3" alt="Trinitas Emblem" class="emblem-image">
-            </div>
-            
-            <h2 class="brand-sub">Trading LLC</h2>
+    <div class="page-container">
+        <!-- Centered Official Logo Graphic (`Designer3.png`) -->
+        <div class="logo-wrapper">
+            <img src="Designer3.png" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
         </div>
-        
-        <p class="subtitle" style="text-align: center;">Curated Horology & Fine Timepieces</p>
-        
-        <address class="curator-info" style="font-style: normal; text-align: center;">
-            <p class="name">CHRISTIAN ALEXANDER</p>
-            <p class="title-role">Founder & Curator</p>
-            <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
-            <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
-            <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
-        </address>
-    </main>
+
+        <!-- Side Information Card -->
+        <main class="content-overlay">
+            <p class="subtitle">Curated Horology & Fine Timepieces</p>
+            
+            <address class="curator-info" style="font-style: normal;">
+                <p class="name">CHRISTIAN ALEXANDER</p>
+                <p class="title-role">Founder & Curator</p>
+                <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
+                <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
+                <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
+            </address>
+        </main>
+    </div>
 </body>
 </html>
