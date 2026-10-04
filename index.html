@@ -13,9 +13,6 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="logo.png">
 
-  <!-- Browser tab icon -->
-  <link rel="icon" href="logo.png" type="image/png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -49,7 +46,7 @@
     .card {
       width: 100%;
       max-width: 560px;
-      padding: 48px 32px 32px;
+      padding: 40px 32px 32px;
       text-align: center;
       background: var(--bg-card);
       border: 1px solid var(--line);
@@ -60,15 +57,18 @@
     .logo {
       display: block;
       width: 100%;
-      max-width: 260px;
+      max-width: 300px;
       height: auto;
-      margin: 0 auto 28px;
+      margin: 0 auto 32px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
     }
 
-    /* Shown only if the logo image fails to load */
+    /* Shown only if every logo file name fails */
     .logo-fallback {
       display: none;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
       font-size: 1.6rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -139,7 +139,8 @@
     }
 
     @media (max-width: 480px) {
-      .card { padding: 36px 20px 24px; }
+      .card { padding: 28px 20px 24px; }
+      .logo { max-width: 240px; }
       h1, h2 { font-size: 1.1rem; }
       .badge { font-size: 0.7rem; letter-spacing: 0.15em; }
     }
@@ -147,13 +148,12 @@
 </head>
 <body>
   <main class="card">
-    <!-- File name must match exactly (GitHub is case-sensitive): logo.png -->
     <img
+      id="logo"
       class="logo"
       src="logo.png"
       alt="Trinitas Aeterna Trading LLC logo"
-      width="260"
-      onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+      width="300">
     <div id="logo-fallback" class="logo-fallback">Trinitas Aeterna Trading LLC</div>
 
     <div class="badge">Direct Digital Storefront &mdash; Launching Soon</div>
@@ -178,6 +178,23 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tries several likely file names for the logo, in order.
+    // If none work, the plain-text company name is shown instead.
+    (function () {
+      var img = document.getElementById("logo");
+      var names = ["logo.png", "logo.PNG", "logo.png.png"];
+      var i = 0;
+      img.onerror = function () {
+        i++;
+        if (i < names.length) {
+          img.src = names[i];
+        } else {
+          img.style.display = "none";
+          document.getElementById("logo-fallback").style.display = "block";
+        }
+      };
+    })();
   </script>
 </body>
 </html>
