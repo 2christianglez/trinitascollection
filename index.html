@@ -79,6 +79,7 @@
             justify-content: center;
             align-items: center;
             flex: 1;
+            min-width: 0;
             animation: masterEntrance 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
@@ -86,6 +87,7 @@
             width: 100%;
             max-width: 420px;
             height: auto;
+            display: block;
             filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75));
             border-radius: 4px;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -95,12 +97,13 @@
             transform: scale(1.02);
         }
 
-        /* Side Contact Information Card Column (Matched to Lighter Rich Emerald & Champagne Gold) */
+        /* Side Contact Information Card Column */
         .card-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             flex: 1;
+            min-width: 0;
         }
 
         .content-overlay {
