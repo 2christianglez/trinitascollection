@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trinitas Aeterna Trading LLC | Curated Horology &amp; Fine Timepieces</title>
   <meta name="description" content="Trinitas Aeterna Trading LLC offers curated horology and fine timepieces. Direct digital storefront launching soon.">
-  <meta name="theme-color" content="#071a14">
+  <meta name="theme-color" content="#0b3022">
 
   <!-- Social sharing preview -->
   <meta property="og:title" content="Trinitas Aeterna Trading LLC">
@@ -15,13 +15,37 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #071a14;
-      --bg-card: rgba(10, 36, 28, 0.85);
-      --gold: #c9a24b;
-      --gold-soft: #a88a45;
-      --text: #f2ede0;
-      --line: rgba(201,
+      /* Colors matched to the logo */
+      --bg-dark: #072419;
+      --bg-mid: #0f3d2b;
+      --bg-card: rgba(16, 60, 43, 0.88);
+      --gold: #d4af5a;
+      --gold-light: #f2dc94;
+      --gold-deep: #9c7a2e;
+      --text: #f6f0dd;
+      --line: rgba(212, 175, 90, 0.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background:
+        radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-dark) 75%),
+        var(--bg-dark);
+      color: var(--text);
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
