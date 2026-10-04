@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ==================== PAGE TITLE & SEO ==================== -->
     <title>Trinitas Aeterna Trading LLC | Curated Horology</title>
@@ -27,10 +27,8 @@
         }
 
         body {
-            /* EDIT BACKGROUND IMAGE HERE if needed */
-            background: #020302 url('Web.Site.2.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
+            /* Rich, sophisticated luxury dark emerald gradient background */
+            background: radial-gradient(circle at center, #112a22 0%, #050d0a 100%);
             color: #f4f4f4;
             font-family: 'Montserrat', Arial, sans-serif;
             display: flex;
@@ -47,7 +45,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(3,5,4,0.1) 0%, rgba(2,3,2,0.7) 100%);
+            background: radial-gradient(circle at center, rgba(3,5,4,0) 0%, rgba(2,3,2,0.6) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -72,7 +70,7 @@
             max-width: 1200px;
             width: 90%;
             box-sizing: border-box;
-            gap: 50px;
+            gap: 60px;
         }
 
         /* Left Side: Logo Column */
@@ -82,16 +80,19 @@
             align-items: center;
             flex: 1;
             min-width: 0;
+            /* Moved drop-shadow here so clip-path on image doesn't slice the shadow */
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
             animation: masterEntrance 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .master-logo {
             width: 100%;
-            max-width: 420px;
+            max-width: 380px;
             height: auto;
             display: block;
-            filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.75));
             border-radius: 4px;
+            /* Crops out bottom-right watermark star */
+            clip-path: inset(0 3.5% 3.5% 0);
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -110,7 +111,7 @@
 
         .content-overlay {
             /* Rich Emerald Green Luxury Card Background */
-            background: linear-gradient(145deg, rgba(31, 90, 74, 0.78) 0%, rgba(20, 58, 48, 0.88) 100%);
+            background: linear-gradient(145deg, rgba(26, 77, 63, 0.85) 0%, rgba(15, 46, 38, 0.95) 100%);
             padding: 45px 50px;
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
@@ -205,6 +206,9 @@
                 padding: 40px 0;
                 align-items: flex-start;
             }
+            body::after {
+                display: none; /* Hide frame border on mobile to prevent clipping scrolling content */
+            }
             .page-container {
                 flex-direction: column;
                 gap: 30px;
@@ -231,34 +235,27 @@
 
     <div class="page-container">
         
-        <!-- ==================== EDIT LOGO IMAGE HERE ==================== -->
+        <!-- ==================== LOGO CONTAINER ==================== -->
         <div class="logo-wrapper">
-            <!-- logo.PNG matches your current repository file -->
             <img src="logo.PNG" alt="Trinitas Aeterna Trading LLC Emblem" class="master-logo">
         </div>
 
-        <!-- ==================== EDIT CONTACT CARD DETAILS HERE ==================== -->
+        <!-- ==================== CONTACT CARD ==================== -->
         <div class="card-wrapper">
             <main class="content-overlay">
                 
-                <!-- Card Subtitle -->
                 <p class="subtitle">Curated Horology & Fine Timepieces</p>
                 
                 <address class="curator-info" style="font-style: normal;">
                     
-                    <!-- Your Name -->
                     <p class="name">CHRISTIAN ALEXANDER</p>
                     
-                    <!-- Your Title -->
                     <p class="title-role">Founder & Curator</p>
                     
-                    <!-- Email Address -->
                     <p class="contact-details">✉ <a href="mailto:Christian@TrinitasCollection.com">Christian@TrinitasCollection.com</a></p>
                     
-                    <!-- Phone Number -->
                     <p class="contact-details">☎ <a href="tel:3106003351">310.600.3351</a></p>
                     
-                    <!-- Website Link -->
                     <p class="contact-details">🌐 <a href="https://TrinitasCollection.com" target="_blank">TrinitasCollection.com</a></p>
                     
                 </address>
